@@ -18,16 +18,21 @@ IPv6_DIR = 'Subnets/IPv6'
 # Minimum line counts considered valid for a fresh download.
 # If a fetched list is below this, we assume the upstream is broken
 # (returned partial / empty / error page) and KEEP the existing file.
+#
+# IPv4 and IPv6 are separate because IPv6 BGP prefixes for these services
+# are NATURALLY tiny (Twitter: 3, Discord: 1, OVH: 4, etc.) — applying IPv4
+# thresholds to IPv6 would falsely reject every fresh good fetch.
 MIN_LINES = {
-    'meta.lst':         20,
-    'twitter.lst':      5,
-    'hetzner.lst':      30,
-    'ovh.lst':          200,
-    'digitalocean.lst': 50,
-    'discord.lst':      3,
-    'telegram.lst':     3,
-    'cloudflare.lst':   5,
-    'cloudfront.lst':   30,
+    # filename            v4_min  v6_min
+    'meta.lst':         {4: 20,  6: 5},
+    'twitter.lst':      {4: 5,   6: 1},
+    'hetzner.lst':      {4: 30,  6: 2},
+    'ovh.lst':          {4: 200, 6: 1},
+    'digitalocean.lst': {4: 50,  6: 5},
+    'discord.lst':      {4: 3,   6: 1},
+    'telegram.lst':     {4: 3,   6: 1},
+    'cloudflare.lst':   {4: 5,   6: 1},
+    'cloudfront.lst':   {4: 30,  6: 5},
 }
 # Refuse to write if the new file shrinks by more than this fraction
 # vs the existing file on disk. Catches partial responses that pass MIN_LINES.
@@ -208,9 +213,16 @@ def write_subnets_to_file(subnets, filename, fetch_ok=True):
     global HAD_FAILURE
     base = os.path.basename(filename)
 
+    # Detect IPv4 vs IPv6 from path so we apply the right threshold.
+    if os.sep + 'IPv6' + os.sep in filename or '/IPv6/' in filename:
+        version = 6
+    else:
+        version = 4
+
     new_count = len(subnets)
     old_count = _count_existing_lines(filename)
-    min_required = MIN_LINES.get(base, 1)
+    thresholds = MIN_LINES.get(base, {})
+    min_required = thresholds.get(version, 1)
 
     if not fetch_ok:
         print(f"[SKIP] {filename}: upstream fetch failed, keeping existing {old_count} lines")
