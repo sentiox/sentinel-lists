@@ -16,5 +16,4 @@ assignees: ''
 
 
 ### Какая программа используется?
-<!-- Например: Podkop, Getdomains, Nekobox, etc. -->
-
+<!-- Например: HarpyNet, sing-box, Mihomo, Nekobox и т.д. -->

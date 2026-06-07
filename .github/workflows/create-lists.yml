@@ -19,50 +19,48 @@ jobs:
   generate-lists:
     runs-on: ubuntu-24.04
     steps:
-    - uses: actions/checkout@v4.3.0
-    - name: Compile ruleset srs
-      run: |
-        docker run --rm \
-        -v ${{ github.workspace }}/src:/app/src \
-        -v ${{ github.workspace }}/Subnets:/app/Subnets \
-        -v ${{ github.workspace }}/Russia:/app/Russia \
-        -v ${{ github.workspace }}/Ukraine:/app/Ukraine \
-        -v ${{ github.workspace }}/Categories:/app/Categories \
-        -v ${{ github.workspace }}/Services:/app/Services \
-        -v ${{ github.workspace }}/SRS:/app/SRS \
-        -v ${{ github.workspace }}/DAT:/app/DAT \
-        itdoginfo/compilesrs:0.1.22
+    - uses: actions/checkout@v6.0.2
 
-    - name: Check Russia/inside-dnsmasq-ipset
-      uses: itdoginfo/dnsmasq-action@0.1
+    - name: Cache sing-box
+      uses: actions/cache@v5.0.3
+      id: cache-singbox
       with:
-        file: "./Russia/inside-dnsmasq-ipset.lst"
-        version: 2.89
-    - name: Check Russia/inside-dnsmasq-nfset
-      uses: itdoginfo/dnsmasq-action@0.1
+        path: /usr/local/bin/sing-box
+        key: sing-box-1.12.25
+
+    - name: Install sing-box
+      if: steps.cache-singbox.outputs.cache-hit != 'true'
+      run: |
+        wget -qO- https://github.com/SagerNet/sing-box/releases/download/v1.12.25/sing-box-1.12.25-linux-amd64.tar.gz | tar xz
+        sudo mv sing-box-*/sing-box /usr/local/bin/
+
+    - name: Cache mihomo
+      uses: actions/cache@v5.0.3
+      id: cache-mihomo
       with:
-        file: "Russia/inside-dnsmasq-nfset.lst"
-        version: 2.89
-    - name: Check Russia/outside-dnsmasq-ipset
-      uses: itdoginfo/dnsmasq-action@0.1
-      with:
-        file: "Russia/outside-dnsmasq-ipset.lst"
-        version: 2.89
-    - name: Check Russia/outside-dnsmasq-nfset
-      uses: itdoginfo/dnsmasq-action@0.1
-      with:
-        file: "Russia/outside-dnsmasq-nfset.lst"
-        version: 2.89
-    - name: Check Ukraine/inside-dnsmasq-ipset
-      uses: itdoginfo/dnsmasq-action@0.1
-      with:
-        file: "Ukraine/inside-dnsmasq-ipset.lst"
-        version: 2.89
-    - name: Check Ukraine/inside-dnsmasq-nfset
-      uses: itdoginfo/dnsmasq-action@0.1
-      with:
-        file: "Ukraine/inside-dnsmasq-nfset.lst"
-        version: 2.89
+        path: /usr/local/bin/mihomo
+        key: mihomo-1.19.8
+
+    - name: Install mihomo
+      if: steps.cache-mihomo.outputs.cache-hit != 'true'
+      run: |
+        wget -qO- https://github.com/MetaCubeX/mihomo/releases/download/v1.19.8/mihomo-linux-amd64-v1.19.8.gz | gunzip > mihomo
+        chmod +x mihomo
+        sudo mv mihomo /usr/local/bin/
+
+    - name: Install Python dependencies
+      run: pip install -r requirements.txt
+
+    - name: Generate lists
+      run: python3 convert.py
+
+    - name: Validate generated lists
+      run: |
+        test -s Russia/inside-raw.lst
+        test -s Russia/outside-raw.lst
+        test -s Ukraine/inside-raw.lst
+        grep -q '^nftset=/' Russia/inside-dnsmasq-nfset.lst
+        grep -q '^ipset=/' Russia/inside-dnsmasq-ipset.lst
 
     - name: Push lists
       uses: EndBug/add-and-commit@v9.1.4
@@ -81,5 +79,6 @@ jobs:
       with:
         files: |
           ${{ github.workspace }}/SRS/*.srs
+          ${{ github.workspace }}/MRS/*.mrs
           ${{ github.workspace }}/DAT/*.dat
         tag_name: ${{ env.TAG_NAME }}

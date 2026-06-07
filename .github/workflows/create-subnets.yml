@@ -7,11 +7,7 @@ on:
       - .github/workflows/create-subnets.yml
       - get-subnets.py
   schedule:
-    # Was '16 7 * * 1' (Mondays only). Run twice a week now so a single
-    # bgp.tools / cloudflare / aws outage doesn't keep the lists stale
-    # for 14 days. Wednesdays + Sundays at 07:16 UTC.
     - cron: '16 7 * * 0,3'
-  # Allow manual runs from the Actions tab when something needs to be re-pulled.
   workflow_dispatch:
 
 permissions:
@@ -19,24 +15,16 @@ permissions:
 
 jobs:
   generate-subnet:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
-    - uses: actions/checkout@v4.1.7
-
-    - name: Setup Python
-      uses: actions/setup-python@v5.1.0
-      with:
-        python-version: '3.10'
-
+    - uses: actions/checkout@v6.0.2
     - name: Generate subnets
-      # get-subnets.py exits non-zero if any list was kept stale because
-      # the upstream returned empty / errored / shrank too much. That fails
-      # this step, the whole workflow goes red, and the commit step below
-      # is skipped — so we never push garbage over good data.
-      run: python get-subnets.py
-
+      uses: actions/setup-python@v6.2.0
+      with:
+        python-version: '3.13'
+    - run: |
+        python get-subnets.py
     - name: Push subnets
-      # Only runs if the previous step succeeded (default behaviour).
       uses: EndBug/add-and-commit@v9.1.4
       with:
         add: 'Subnets'
