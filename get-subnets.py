@@ -3,7 +3,6 @@
 import ipaddress
 import urllib.request
 import os
-import shutil
 import json
 import time
 
@@ -221,19 +220,6 @@ def preserve_existing_on_failure(subnets, filename, complete):
     print(f'Preserving {len(existing)} existing entries from {filename}')
     return subnets + existing
 
-def copy_file_legacy(src_filename):
-    base_filename = os.path.basename(src_filename)
-    new_filename = base_filename.capitalize()
-    destination = os.path.join(os.path.dirname(src_filename), new_filename)
-
-    try:
-        if os.path.exists(destination) and os.path.samefile(src_filename, destination):
-            return
-    except OSError:
-        pass
-
-    shutil.copy(src_filename, destination)
-
 if __name__ == '__main__':
     # Services from ASN (meta, twitter, hetzner, ovh, digitalocean)
     for filename, asn_list in ASN_SERVICES.items():
@@ -309,9 +295,3 @@ if __name__ == '__main__':
     )
     write_subnets_to_file(ipv4_cloudfront, f'{IPv4_DIR}/{CLOUDFRONT}')
     write_subnets_to_file(ipv6_cloudfront, f'{IPv6_DIR}/{CLOUDFRONT}')
-
-    # Legacy copies with capitalized names (e.g. meta.lst -> Meta.lst)
-    LEGACY_FILES = ['meta.lst', 'twitter.lst', 'discord.lst']
-    for legacy_file in LEGACY_FILES:
-        copy_file_legacy(f'{IPv4_DIR}/{legacy_file}')
-        copy_file_legacy(f'{IPv6_DIR}/{legacy_file}')
