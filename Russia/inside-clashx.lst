@@ -63,6 +63,7 @@ DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,anthropic.qualtrics.com
 DOMAIN-SUFFIX,any.do
 DOMAIN-SUFFIX,aol.com
+DOMAIN-SUFFIX,api.instagram.com
 DOMAIN-SUFFIX,api.jetbrains.ai
 DOMAIN-SUFFIX,api.service-kp.com
 DOMAIN-SUFFIX,api.theins.info
@@ -87,6 +88,7 @@ DOMAIN-SUFFIX,autodesk.com
 DOMAIN-SUFFIX,avira.com
 DOMAIN-SUFFIX,azathabar.com
 DOMAIN-SUFFIX,azattyq.org
+DOMAIN-SUFFIX,b.i.instagram.com
 DOMAIN-SUFFIX,babepedia.com
 DOMAIN-SUFFIX,babook.org
 DOMAIN-SUFFIX,backend-v2.crixet.com
@@ -187,6 +189,7 @@ DOMAIN-SUFFIX,copilot.microsoft.com
 DOMAIN-SUFFIX,corsair.com
 DOMAIN-SUFFIX,coursera.org
 DOMAIN-SUFFIX,cpu-monkey.com
+DOMAIN-SUFFIX,creative.cdninstagram.com
 DOMAIN-SUFFIX,credly.com
 DOMAIN-SUFFIX,croxyproxy.com
 DOMAIN-SUFFIX,crunchyroll.com
@@ -269,6 +272,8 @@ DOMAIN-SUFFIX,e-hentai.org
 DOMAIN-SUFFIX,e621.net
 DOMAIN-SUFFIX,easydmarc.com
 DOMAIN-SUFFIX,echofm.online
+DOMAIN-SUFFIX,edge-chat.instagram.com
+DOMAIN-SUFFIX,edge-mqtt.facebook.com
 DOMAIN-SUFFIX,editorx.com
 DOMAIN-SUFFIX,edu-cisco.org
 DOMAIN-SUFFIX,ef.com
@@ -381,6 +386,9 @@ DOMAIN-SUFFIX,gql.twitch.tv
 DOMAIN-SUFFIX,gr-assets.com
 DOMAIN-SUFFIX,grafana.com
 DOMAIN-SUFFIX,grani.ru
+DOMAIN-SUFFIX,graph-fallback.instagram.com
+DOMAIN-SUFFIX,graph.instagram.com
+DOMAIN-SUFFIX,graphql.instagram.com
 DOMAIN-SUFFIX,graty.me
 DOMAIN-SUFFIX,graylog.org
 DOMAIN-SUFFIX,grizzlysms.com
@@ -429,6 +437,7 @@ DOMAIN-SUFFIX,htmhell.dev
 DOMAIN-SUFFIX,httptoolkit.com
 DOMAIN-SUFFIX,hume.ai
 DOMAIN-SUFFIX,hybrid-analysis.com
+DOMAIN-SUFFIX,i.instagram.com
 DOMAIN-SUFFIX,i.sakh.com
 DOMAIN-SUFFIX,ibm.com
 DOMAIN-SUFFIX,ibytedtos.com
@@ -449,6 +458,8 @@ DOMAIN-SUFFIX,indeed.com
 DOMAIN-SUFFIX,indiehackers.com
 DOMAIN-SUFFIX,infineon.com
 DOMAIN-SUFFIX,insearch.site
+DOMAIN-SUFFIX,instagram.c10r.facebook.com
+DOMAIN-SUFFIX,instagram.c10r.instagram.com
 DOMAIN-SUFFIX,instagram.com
 DOMAIN-SUFFIX,install.launcher.omniverse.nvidia.com
 DOMAIN-SUFFIX,intel.com
@@ -535,6 +546,7 @@ DOMAIN-SUFFIX,linktr.ee
 DOMAIN-SUFFIX,livetv.sx
 DOMAIN-SUFFIX,liveuamap.com
 DOMAIN-SUFFIX,locals.md
+DOMAIN-SUFFIX,logger.instagram.com
 DOMAIN-SUFFIX,lolz.guru
 DOMAIN-SUFFIX,lookerstudio.google.com
 DOMAIN-SUFFIX,lostfilm.download
@@ -592,6 +604,9 @@ DOMAIN-SUFFIX,more.fm
 DOMAIN-SUFFIX,moscowtimes.ru
 DOMAIN-SUFFIX,mouser.com
 DOMAIN-SUFFIX,mouser.fi
+DOMAIN-SUFFIX,mqtt-ig-p4.facebook.com
+DOMAIN-SUFFIX,mqtt-mini.c10r.facebook.com
+DOMAIN-SUFFIX,mqtt-mini.facebook.com
 DOMAIN-SUFFIX,mssg.me
 DOMAIN-SUFFIX,mullvad.net
 DOMAIN-SUFFIX,multisim.com
@@ -845,6 +860,7 @@ DOMAIN-SUFFIX,saverudata.net
 DOMAIN-SUFFIX,schneider-electric.com
 DOMAIN-SUFFIX,sci-hub.se
 DOMAIN-SUFFIX,sci-hub.st
+DOMAIN-SUFFIX,scontent.cdninstagram.com
 DOMAIN-SUFFIX,scrollrevealjs.org
 DOMAIN-SUFFIX,scryde.io
 DOMAIN-SUFFIX,scryde.net
@@ -930,8 +946,11 @@ DOMAIN-SUFFIX,sputnikipogrom.com
 DOMAIN-SUFFIX,squadbustersgame.com
 DOMAIN-SUFFIX,squareup.com
 DOMAIN-SUFFIX,squietpc.com
+DOMAIN-SUFFIX,star-mini.c10r.facebook.com
+DOMAIN-SUFFIX,star.fallback.c10r.instagram.com
 DOMAIN-SUFFIX,startmail.com
 DOMAIN-SUFFIX,startpage.com
+DOMAIN-SUFFIX,static.cdninstagram.com
 DOMAIN-SUFFIX,static.lostfilm.top
 DOMAIN-SUFFIX,statology.org
 DOMAIN-SUFFIX,steamstat.info
@@ -1057,6 +1076,7 @@ DOMAIN-SUFFIX,ukrtelcdn.net
 DOMAIN-SUFFIX,unian.ua
 DOMAIN-SUFFIX,unscreen.com
 DOMAIN-SUFFIX,unsplash.com
+DOMAIN-SUFFIX,upload.instagram.com
 DOMAIN-SUFFIX,upwork.com
 DOMAIN-SUFFIX,urlr.me
 DOMAIN-SUFFIX,usa.one

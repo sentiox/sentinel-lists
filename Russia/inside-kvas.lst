@@ -62,6 +62,7 @@ anthropic.com
 anthropic.qualtrics.com
 any.do
 aol.com
+api.instagram.com
 api.jetbrains.ai
 api.service-kp.com
 api.theins.info
@@ -86,6 +87,7 @@ autodesk.com
 avira.com
 azathabar.com
 azattyq.org
+b.i.instagram.com
 babepedia.com
 babook.org
 backend-v2.crixet.com
@@ -186,6 +188,7 @@ copilot.microsoft.com
 corsair.com
 coursera.org
 cpu-monkey.com
+creative.cdninstagram.com
 credly.com
 croxyproxy.com
 crunchyroll.com
@@ -268,6 +271,8 @@ e-hentai.org
 e621.net
 easydmarc.com
 echofm.online
+edge-chat.instagram.com
+edge-mqtt.facebook.com
 editorx.com
 edu-cisco.org
 ef.com
@@ -380,6 +385,9 @@ gql.twitch.tv
 gr-assets.com
 grafana.com
 grani.ru
+graph-fallback.instagram.com
+graph.instagram.com
+graphql.instagram.com
 graty.me
 graylog.org
 grizzlysms.com
@@ -428,6 +436,7 @@ htmhell.dev
 httptoolkit.com
 hume.ai
 hybrid-analysis.com
+i.instagram.com
 i.sakh.com
 ibm.com
 ibytedtos.com
@@ -448,6 +457,8 @@ indeed.com
 indiehackers.com
 infineon.com
 insearch.site
+instagram.c10r.facebook.com
+instagram.c10r.instagram.com
 instagram.com
 install.launcher.omniverse.nvidia.com
 intel.com
@@ -534,6 +545,7 @@ linktr.ee
 livetv.sx
 liveuamap.com
 locals.md
+logger.instagram.com
 lolz.guru
 lookerstudio.google.com
 lostfilm.download
@@ -591,6 +603,9 @@ more.fm
 moscowtimes.ru
 mouser.com
 mouser.fi
+mqtt-ig-p4.facebook.com
+mqtt-mini.c10r.facebook.com
+mqtt-mini.facebook.com
 mssg.me
 mullvad.net
 multisim.com
@@ -844,6 +859,7 @@ saverudata.net
 schneider-electric.com
 sci-hub.se
 sci-hub.st
+scontent.cdninstagram.com
 scrollrevealjs.org
 scryde.io
 scryde.net
@@ -929,8 +945,11 @@ sputnikipogrom.com
 squadbustersgame.com
 squareup.com
 squietpc.com
+star-mini.c10r.facebook.com
+star.fallback.c10r.instagram.com
 startmail.com
 startpage.com
+static.cdninstagram.com
 static.lostfilm.top
 statology.org
 steamstat.info
@@ -1055,6 +1074,7 @@ ukrtelcdn.net
 unian.ua
 unscreen.com
 unsplash.com
+upload.instagram.com
 upwork.com
 urlr.me
 usa.one

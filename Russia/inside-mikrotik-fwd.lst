@@ -63,6 +63,7 @@
 /ip dns static add name=anthropic.qualtrics.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=any.do type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=aol.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
+/ip dns static add name=api.instagram.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=api.jetbrains.ai type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=api.service-kp.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=api.theins.info type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
@@ -87,6 +88,7 @@
 /ip dns static add name=avira.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=azathabar.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=azattyq.org type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
+/ip dns static add name=b.i.instagram.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=babepedia.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=babook.org type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=backend-v2.crixet.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
@@ -187,6 +189,7 @@
 /ip dns static add name=corsair.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=coursera.org type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=cpu-monkey.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
+/ip dns static add name=creative.cdninstagram.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=credly.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=croxyproxy.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=crunchyroll.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
@@ -269,6 +272,8 @@
 /ip dns static add name=e621.net type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=easydmarc.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=echofm.online type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
+/ip dns static add name=edge-chat.instagram.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
+/ip dns static add name=edge-mqtt.facebook.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=editorx.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=edu-cisco.org type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=ef.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
@@ -381,6 +386,9 @@
 /ip dns static add name=gr-assets.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=grafana.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=grani.ru type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
+/ip dns static add name=graph-fallback.instagram.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
+/ip dns static add name=graph.instagram.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
+/ip dns static add name=graphql.instagram.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=graty.me type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=graylog.org type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=grizzlysms.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
@@ -429,6 +437,7 @@
 /ip dns static add name=httptoolkit.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=hume.ai type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=hybrid-analysis.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
+/ip dns static add name=i.instagram.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=i.sakh.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=ibm.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=ibytedtos.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
@@ -449,6 +458,8 @@
 /ip dns static add name=indiehackers.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=infineon.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=insearch.site type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
+/ip dns static add name=instagram.c10r.facebook.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
+/ip dns static add name=instagram.c10r.instagram.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=instagram.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=install.launcher.omniverse.nvidia.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=intel.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
@@ -535,6 +546,7 @@
 /ip dns static add name=livetv.sx type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=liveuamap.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=locals.md type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
+/ip dns static add name=logger.instagram.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=lolz.guru type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=lookerstudio.google.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=lostfilm.download type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
@@ -592,6 +604,9 @@
 /ip dns static add name=moscowtimes.ru type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=mouser.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=mouser.fi type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
+/ip dns static add name=mqtt-ig-p4.facebook.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
+/ip dns static add name=mqtt-mini.c10r.facebook.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
+/ip dns static add name=mqtt-mini.facebook.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=mssg.me type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=mullvad.net type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=multisim.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
@@ -845,6 +860,7 @@
 /ip dns static add name=schneider-electric.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=sci-hub.se type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=sci-hub.st type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
+/ip dns static add name=scontent.cdninstagram.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=scrollrevealjs.org type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=scryde.io type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=scryde.net type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
@@ -929,8 +945,11 @@
 /ip dns static add name=squadbustersgame.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=squareup.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=squietpc.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
+/ip dns static add name=star-mini.c10r.facebook.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
+/ip dns static add name=star.fallback.c10r.instagram.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=startmail.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=startpage.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
+/ip dns static add name=static.cdninstagram.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=static.lostfilm.top type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=statology.org type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=steamstat.info type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
@@ -1056,6 +1075,7 @@
 /ip dns static add name=unian.ua type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=unscreen.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=unsplash.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
+/ip dns static add name=upload.instagram.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=upwork.com type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=urlr.me type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
 /ip dns static add name=usa.one type=FWD address-list=allow-domains match-subdomain=yes forward-to=localhost
