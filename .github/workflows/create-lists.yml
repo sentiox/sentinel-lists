@@ -7,6 +7,7 @@ on:
       - .github/workflows/create-lists.yml
       - Categories/**
       - Services/**
+      - Subnets/**
       - src/**
       - convert.py
   schedule:
@@ -59,6 +60,9 @@ jobs:
         test -s Russia/inside-raw.lst
         test -s Russia/outside-raw.lst
         test -s Ukraine/inside-raw.lst
+        test -s SRS/telegram.srs
+        test -s MRS/telegram_domain.mrs
+        test -s MRS/telegram_ipcidr.mrs
         grep -q '^nftset=/' Russia/inside-dnsmasq-nfset.lst
         grep -q '^ipset=/' Russia/inside-dnsmasq-ipset.lst
 

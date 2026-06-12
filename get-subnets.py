@@ -34,6 +34,8 @@ TELEGRAM_V4 = [
     '91.108.56.0/22',
     '95.161.64.0/20',
     '149.154.160.0/20',
+    '149.154.162.0/24',
+    '149.154.167.0/24',
     '185.76.151.0/24',
 ]
 
@@ -114,6 +116,10 @@ def open_request(req):
 def subnet_summarization(subnet_list):
     subnets = [ipaddress.ip_network(subnet, strict=False) for subnet in subnet_list]
     return list(ipaddress.collapse_addresses(subnets))
+
+def subnet_sort_unique(subnet_list):
+    subnets = {ipaddress.ip_network(subnet, strict=False) for subnet in subnet_list}
+    return sorted(subnets, key=lambda subnet: (subnet.version, subnet.network_address, subnet.prefixlen))
 
 def fetch_asn_prefixes(asn_list):
     ipv4_subnets = []
@@ -260,8 +266,10 @@ if __name__ == '__main__':
     ipv6_telegram_file = preserve_existing_on_failure(
         ipv6_telegram_file, f'{IPv6_DIR}/{TELEGRAM}', complete
     )
-    ipv4_telegram = subnet_summarization(ipv4_telegram_file + ipv4_telegram_asn + TELEGRAM_V4)
-    ipv6_telegram = subnet_summarization(ipv6_telegram_file + ipv6_telegram_asn)
+    # Keep explicitly listed Telegram ranges even when they are contained in
+    # a broader CIDR. Some downstream list consumers display these ranges.
+    ipv4_telegram = subnet_sort_unique(ipv4_telegram_file + ipv4_telegram_asn + TELEGRAM_V4)
+    ipv6_telegram = subnet_sort_unique(ipv6_telegram_file + ipv6_telegram_asn)
     write_subnets_to_file(ipv4_telegram, f'{IPv4_DIR}/{TELEGRAM}')
     write_subnets_to_file(ipv6_telegram, f'{IPv6_DIR}/{TELEGRAM}')
 
