@@ -61,8 +61,16 @@ jobs:
         test -s Russia/outside-raw.lst
         test -s Ukraine/inside-raw.lst
         test -s SRS/telegram.srs
+        test -s SRS/ai_full.srs
+        test -s SRS/chatgpt.srs
+        test -s SRS/claude.srs
         test -s MRS/telegram_domain.mrs
+        test -s MRS/ai_full_domain.mrs
+        test -s MRS/chatgpt_domain.mrs
+        test -s MRS/claude_domain.mrs
         test -s MRS/telegram_ipcidr.mrs
+        ! grep -q '^openai\.com$' Russia/inside-raw.lst
+        ! grep -q '^anthropic\.com$' Russia/inside-raw.lst
         grep -q '^nftset=/' Russia/inside-dnsmasq-nfset.lst
         grep -q '^ipset=/' Russia/inside-dnsmasq-ipset.lst
 

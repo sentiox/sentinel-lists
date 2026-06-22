@@ -23,7 +23,12 @@ SUBNET_SERVICES = [
     'cloudflare', 'hetzner', 'ovh', 'digitalocean',
     'cloudfront', 'roblox', 'google_meet',
 ]
-ExcludeServices = {"telegram.lst", "cloudflare.lst", "google_ai.lst", "google_play.lst", 'hetzner.lst', 'ovh.lst', 'digitalocean.lst', 'cloudfront.lst', 'hodca.lst', 'roblox.lst', 'google_meet.lst'}
+ExcludeServices = {
+    "telegram.lst", "cloudflare.lst", "google_ai.lst", "google_play.lst",
+    "ai_full.lst", "chatgpt.lst", "claude.lst",
+    "hetzner.lst", "ovh.lst", "digitalocean.lst", "cloudfront.lst",
+    "hodca.lst", "roblox.lst", "google_meet.lst",
+}
 
 def collect_files(src):
     files = []
@@ -52,8 +57,8 @@ def collect_domains(src, dot_prefix=True):
                     domains.add(prefix + ext.suffix)
     return domains
 
-def raw(src, out):
-    domains = sorted(collect_domains(src))
+def raw(src, out, remove=None):
+    domains = sorted(collect_domains(src) - (remove or set()))
 
     with open(f'{out}-raw.lst', 'w') as file:
         for name in domains:
@@ -273,12 +278,19 @@ if __name__ == '__main__':
     removeDomainsKvas = {'google.com', 'googletagmanager.com', 'github.com', 'githubusercontent.com', 'githubcopilot.com', 'microsoft.com', 'cloudflare-dns.com', 'parsec.app', 't.co', 'ua' }
     
     inside_lists = [rusDomainsInsideCategories, rusDomainsInsideServices]
+    ai_service_lists = [
+        'Services/ai_full.lst',
+        'Services/chatgpt.lst',
+        'Services/claude.lst',
+        'Services/google_ai.lst',
+    ]
+    ai_domains = set().union(*(set(lines_from_file(path)) for path in ai_service_lists))
 
-    raw(inside_lists, rusDomainsInsideOut)
-    dnsmasq(inside_lists, rusDomainsInsideOut, removeDomains)
-    clashx(inside_lists, rusDomainsInsideOut, removeDomains)
-    kvas(inside_lists, rusDomainsInsideOut, removeDomainsKvas)
-    mikrotik_fwd(inside_lists, rusDomainsInsideOut, removeDomainsMikrotik)
+    raw(inside_lists, rusDomainsInsideOut, ai_domains)
+    dnsmasq(inside_lists, rusDomainsInsideOut, removeDomains | ai_domains)
+    clashx(inside_lists, rusDomainsInsideOut, removeDomains | ai_domains)
+    kvas(inside_lists, rusDomainsInsideOut, removeDomainsKvas | ai_domains)
+    mikrotik_fwd(inside_lists, rusDomainsInsideOut, removeDomainsMikrotik | ai_domains)
 
     # Russia outside
     outside_lists = [rusDomainsOutsideSrc]
